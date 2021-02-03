@@ -1,0 +1,36 @@
+// Creating 2 variables | One for x-xis and second for y Axis 
+// Also Create 4 functions to move in y-axis (Forward / backward) and to move in x axis (right / left)
+
+pragma solidity ^0.8.0;
+
+contract Axis {
+    
+    int8 public x = 0;
+    int8 public y = 0;
+    
+     function Forward()  public {
+         
+         y = y + 1;
+        
+    }
+
+    function Backward() public {
+        
+        y = y - 1;
+        
+    }
+
+    function Right() public {
+        
+        x = x + 1;
+        
+    }
+
+    function Left() public {
+        
+        x = x - 1;
+        
+    }
+    
+
+}
