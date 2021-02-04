@@ -1,0 +1,48 @@
+pragma solidity ^0.8.0;
+
+// Global object message
+// properties:-
+// 1) msg.sender - add of account which initiated transaction
+// 2) msg.value - amt of ether send in trx
+// 3) now - current timestamp
+
+//Address -
+// If want to send some ether to this account - needs to be payable
+// properties
+// 1) .balance - balance of Address
+// if defined as payable
+
+
+
+
+contract Address {
+    
+    address public sender;
+    
+    address payable receiver;
+    
+    uint public value;
+    
+    function setSender() public {
+        
+        sender = msg.sender;
+    } 
+    
+    function receiveF() public payable{
+        
+        value = msg.value; 
+        
+    } 
+    
+    function getBalance() public view returns(uint){
+        
+        return address(this).balance;
+    }
+    
+    function withdraw(address payable _receiver, uint _amount) public {
+        
+        _receiver.transfer(_amount);
+        
+        
+    }
+}
